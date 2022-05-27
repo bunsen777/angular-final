@@ -1,0 +1,59 @@
+<h1>{{title}}</h1>
+
+
+<input type="text" #name placeholder="Enter Name" name="Name"><br>
+<input type="text" #address placeholder="Enter Address" name="address"><br>
+<input type="number" #contact placeholder="Enter Contact" name="contact"><br>
+<input type="email" #email placeholder="Enter Email" name="email"><br>
+<input type="password" #password placeholder="Enter password" name="password"><br>
+
+
+<button (click)="getvalue(name.value,address.name,contact.name,email.name)">Register</button>
+
+
+
+<h1>Your Registration Data</h1>
+
+
+<p>Name: {{displayname}}</p>
+<p>Addresss: {{displayaddress}}</p>
+<p>Contact: {{displaycontact}}</p>
+<p>Email: {{displayemail}}</p>
+======================================================================================================
+import { Component } from "@angular/core";
+
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
+})
+export class AppComponent {
+  title = "Registration Form";
+
+  displayname = "";
+  displayaddress = "";
+  displaycontact = "";
+  displayemail = "";
+  displaypassword = "";
+
+  getvalue(name: string, address: string, contact: string, email: string) {
+    this.displayname = name;
+    this.displayaddress = address;
+    this.displaycontact = contact;
+    this.displayemail = email;
+  }
+} 
+--------------------------------------------------------------------------------------------------
+create empty folder on desktop and open it vs code
+then go to terminal directory inside that folder
+npm --version
+npm install -g @angular/cli@latest
+ng new part-c
+yes
+in app > app.component.html > paste 1st code > save
+in app.component.ts > paste 2nd code > save
+cd part-c
+ng serve
+y
+open link
+if needed add css in app.component.css
